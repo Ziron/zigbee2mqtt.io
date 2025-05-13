@@ -18,7 +18,7 @@ pageClass: device-page
 | Model | ZBDongle-E  |
 | Vendor  | [SONOFF](/supported-devices/#v=SONOFF)  |
 | Description | Sonoff Zigbee 3.0 USB Dongle Plus (EFR32MG21) with router firmware |
-| Exposes | light_indicator_level, linkquality |
+| Exposes | light_indicator_level |
 | Picture | ![SONOFF ZBDongle-E](https://www.zigbee2mqtt.io/images/devices/ZBDongle-E.png) |
 
 
@@ -65,14 +65,24 @@ The guide from SONOFF is not very detailed. Here are some additional hints:
       <img src="../../docs/images/putty-bootloader-2.png" width="350" height="250"/>
   * Open another terminal on the host system. Download the router firmware *.gbl file from [here](https://github.com/itead/Sonoff_Zigbee_Dongle_Firmware/tree/master/Dongle-E/Router), e.g.
 
-      `wget https://github.com/itead/Sonoff_Zigbee_Dongle_Firmware/blob/master/Dongle-E/Router/Z3RouterUSBDonlge_EZNet6.10.3_V1.0.0.gbl`
+      `wget https://github.com/itead/Sonoff_Zigbee_Dongle_Firmware/raw/refs/heads/master/Dongle-E/Router/Z3RouterUSBDonlge_EZNet6.10.3_V1.0.0.gbl`
   * Send the file through XMODEM    
 
       * debian based OS: `sx Z3RouterUSBDonlge_EZNet6.10.3_V1.0.0.gbl < /dev/ttyACM0 > /dev/ttyACM0`
       * arch based OS: `lrzsz-sx -X Z3RouterUSBDonlge_EZNet6.10.3_V1.0.0.gbl < /dev/ttyACM0 > /dev/ttyACM0` (Without the -X it will not use the xmodem protocol)
   * Wait for 'Serial upload complete', then press '2' in the Bootloader Terminal to restart the dongle.
-* Finally, the dongle LED blinks green, inidicating it is in paring mode. Pair as usual with Z2M.
+* Finally, the dongle LED blinks green, indicating it is in paring mode. Pair as usual with Z2M.
 * Note: The dongle may not pair successfully if it is plugged into a USB 3.x socket, if it fails to pair try moving it to a USB 2 socket or a standalone USB charger.
+* If you have to re-pair the dongle and it does not show up you can try this step by step guide:
+    1. Disassemble the device
+    2. Re-attach the antenna (to avoid burnout)
+    3. Provide power to the device
+    4. Permit join (allow pairing) to Zigbee2MQTT Coordinator
+    5. Press the boot button for about 5 seconds (green LED might not flash)
+    6. Monitor device becoming available
+    7. Power down device, remove antenna
+    8. Re-assemble device and attach antenna
+    9. Place router to it’s designed location
 <!-- Notes END: Do not edit below this line -->
 
 
@@ -84,11 +94,4 @@ The guide from SONOFF is not very detailed. Here are some additional hints:
 Brightness of the indicator light.
 Value can be found in the published state on the `light_indicator_level` property.
 It's not possible to read (`/get`) or write (`/set`) this value.
-
-### Linkquality (numeric)
-Link quality (signal strength).
-Value can be found in the published state on the `linkquality` property.
-It's not possible to read (`/get`) or write (`/set`) this value.
-The minimal value is `0` and the maximum value is `255`.
-The unit of this value is `lqi`.
 

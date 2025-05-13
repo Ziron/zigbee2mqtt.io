@@ -18,7 +18,7 @@ pageClass: device-page
 | Model | GL-C-008P  |
 | Vendor  | [Gledopto](/supported-devices/#v=Gledopto)  |
 | Description | Zigbee LED Controller RGB+CCT (pro) |
-| Exposes | light (state, brightness, color_temp, color_temp_startup, color_xy, color_hs), effect, power_on_behavior, identify, linkquality |
+| Exposes | light (state, brightness, color_temp, color_temp_startup, color_xy, color_hs), effect, power_on_behavior, identify |
 | Picture | ![Gledopto GL-C-008P](https://www.zigbee2mqtt.io/images/devices/GL-C-008P.png) |
 | White-label | Gledopto GL-C-008P_mini, Gledopto GL-C-001P, Gledopto GL-C-002P, Gledopto GL-C-011P, Gledopto GL-C-201P, Gledopto GL-C-202P, Gledopto GL-C-204P, Gledopto GL-C-301P |
 
@@ -143,11 +143,4 @@ Value will **not** be published in the state.
 It's not possible to read (`/get`) this value.
 To write (`/set`) a value publish a message to topic `zigbee2mqtt/FRIENDLY_NAME/set` with payload `{"identify": NEW_VALUE}`.
 The possible values are: `identify`.
-
-### Linkquality (numeric)
-Link quality (signal strength).
-Value can be found in the published state on the `linkquality` property.
-It's not possible to read (`/get`) or write (`/set`) this value.
-The minimal value is `0` and the maximum value is `255`.
-The unit of this value is `lqi`.
 

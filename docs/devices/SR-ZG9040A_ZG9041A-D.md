@@ -18,7 +18,7 @@ pageClass: device-page
 | Model | SR-ZG9040A/ZG9041A-D  |
 | Vendor  | [Sunricher](/supported-devices/#v=Sunricher)  |
 | Description | Zigbee micro smart dimmer |
-| Exposes | light (state, brightness), effect, power_on_behavior, power, voltage, current, energy, external_switch_type, minimum_pwm, linkquality |
+| Exposes | light (state, brightness), effect, power_on_behavior, power, voltage, current, energy, external_switch_type, minimum_pwm |
 | Picture | ![Sunricher SR-ZG9040A/ZG9041A-D](https://www.zigbee2mqtt.io/images/devices/SR-ZG9040A-ZG9041A-D.png) |
 
 
@@ -142,11 +142,4 @@ To read (`/get`) the value publish a message to topic `zigbee2mqtt/FRIENDLY_NAME
 To write (`/set`) a value publish a message to topic `zigbee2mqtt/FRIENDLY_NAME/set` with payload `{"minimum_pwm": NEW_VALUE}`.
 The minimal value is `0` and the maximum value is `50`.
 The unit of this value is `%`.
-
-### Linkquality (numeric)
-Link quality (signal strength).
-Value can be found in the published state on the `linkquality` property.
-It's not possible to read (`/get`) or write (`/set`) this value.
-The minimal value is `0` and the maximum value is `255`.
-The unit of this value is `lqi`.
 

@@ -76,7 +76,7 @@ sure to set `mqtt.version` to `5` (see `mqtt` configuration above)
 QoS level for MQTT messages of this device. [What is QoS?](https://www.npmjs.com/package/mqtt#about-qos)
 
 **`homeassistant`**  
-Allows overriding the values of the Home Assistant discovery payload. See example below.
+Allows overriding the values of the Home Assistant discovery payload. See example above.
 
 **`debounce`**  
 Debounces messages of this device. When setting e.g. `debounce: 1` and a message from a device is
@@ -119,9 +119,9 @@ This prevents attributes from being published when the value did not change.
 **`optimistic`**  
 The optimistic mode is a feature that influences how the state of a device is handled in the absence of updates. When optimistic mode is enabled for a device and the last sent command was successful, it updates the device state accordingly, even before receiving confirmation from the device itself (default `true`).
 
-Enabled: If you send a command to turn on a light and the command was succesful, for example, Zigbee2MQTT will immediately update its internal state to reflect that the light is on. If the command fails, the state is not updated.
+Enabled: If you send a command to turn on a light and the command was successful, for example, Zigbee2MQTT will immediately update its internal state to reflect that the light is on. If the command fails, the state is not updated.
 
-Disabled: Zigbee2MQTT will only update its internal state after the device reports the new state, regardless of whether the command was succesful or not.
+Disabled: Zigbee2MQTT will only update its internal state after the device reports the new state, regardless of whether the command was successful or not.
 
 **`filtered_optimistic`**  
 Same as the `filtered_attributes` option but only applies to the optimistic published

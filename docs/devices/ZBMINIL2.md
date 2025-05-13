@@ -13,13 +13,13 @@ pageClass: device-page
 
 # SONOFF ZBMINIL2
 
-|             |                                                                            |
-| ----------- | -------------------------------------------------------------------------- |
-| Model       | ZBMINIL2                                                                   |
-| Vendor      | [SONOFF](/supported-devices/#v=SONOFF)                                     |
-| Description | Zigbee smart switch (no neutral)                                           |
-| Exposes     | switch (state), power_on_behavior, linkquality                             |
-| Picture     | ![SONOFF ZBMINIL2](https://www.zigbee2mqtt.io/images/devices/ZBMINIL2.png) |
+|     |     |
+|-----|-----|
+| Model | ZBMINIL2  |
+| Vendor  | [SONOFF](/supported-devices/#v=SONOFF)  |
+| Description | Zigbee smart switch (no neutral) |
+| Exposes | switch (state), power_on_behavior |
+| Picture | ![SONOFF ZBMINIL2](https://www.zigbee2mqtt.io/images/devices/ZBMINIL2.png) |
 
 
 <!-- Notes BEGIN: You can edit here. Add "## Notes" headline if not already present. -->
@@ -37,8 +37,8 @@ The device will stay in "state" : "OFF" and cannot be switched while it is in pa
 
 ## Change Switch Type
 The device supports rocker switch by default. If you want to change the switch type, press the button 3 times and see the green Led indicator flash 3 times quickly, then the switch type is switched successfully.
-
 <!-- Notes END: Do not edit below this line -->
+
 
 ## OTA updates
 This device supports OTA updates, for more information see [OTA updates](../guide/usage/ota_updates.md).
@@ -69,11 +69,4 @@ Value can be found in the published state on the `power_on_behavior` property.
 To read (`/get`) the value publish a message to topic `zigbee2mqtt/FRIENDLY_NAME/get` with payload `{"power_on_behavior": ""}`.
 To write (`/set`) a value publish a message to topic `zigbee2mqtt/FRIENDLY_NAME/set` with payload `{"power_on_behavior": NEW_VALUE}`.
 The possible values are: `off`, `on`, `toggle`, `previous`.
-
-### Linkquality (numeric)
-Link quality (signal strength).
-Value can be found in the published state on the `linkquality` property.
-It's not possible to read (`/get`) or write (`/set`) this value.
-The minimal value is `0` and the maximum value is `255`.
-The unit of this value is `lqi`.
 

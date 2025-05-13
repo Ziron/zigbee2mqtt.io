@@ -18,7 +18,7 @@ pageClass: device-page
 | Model | Hive  |
 | Vendor  | [Phoscon](/supported-devices/#v=Phoscon)  |
 | Description | Battery powered smart LED light |
-| Exposes | light (state, brightness, color_temp, color_temp_startup, color_xy), effect, power_on_behavior, battery, linkquality |
+| Exposes | light (state, brightness, color_temp, color_temp_startup, color_xy), effect, power_on_behavior, battery |
 | Picture | ![Phoscon Hive](https://www.zigbee2mqtt.io/images/devices/Hive.png) |
 
 
@@ -106,11 +106,4 @@ To read (`/get`) the value publish a message to topic `zigbee2mqtt/FRIENDLY_NAME
 It's not possible to write (`/set`) this value.
 The minimal value is `0` and the maximum value is `100`.
 The unit of this value is `%`.
-
-### Linkquality (numeric)
-Link quality (signal strength).
-Value can be found in the published state on the `linkquality` property.
-It's not possible to read (`/get`) or write (`/set`) this value.
-The minimal value is `0` and the maximum value is `255`.
-The unit of this value is `lqi`.
 

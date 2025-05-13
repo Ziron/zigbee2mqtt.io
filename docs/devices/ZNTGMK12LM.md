@@ -18,7 +18,7 @@ pageClass: device-page
 | Model | ZNTGMK12LM  |
 | Vendor  | [Aqara](/supported-devices/#v=Aqara)  |
 | Description | Smart color temperature light controller |
-| Exposes | light (state, brightness, color_temp), power_outage_count, device_temperature, linkquality |
+| Exposes | light (state, brightness, color_temp), power_outage_count, device_temperature |
 | Picture | ![Aqara ZNTGMK12LM](https://www.zigbee2mqtt.io/images/devices/ZNTGMK12LM.png) |
 
 
@@ -92,11 +92,4 @@ Temperature of the device.
 Value can be found in the published state on the `device_temperature` property.
 It's not possible to read (`/get`) or write (`/set`) this value.
 The unit of this value is `°C`.
-
-### Linkquality (numeric)
-Link quality (signal strength).
-Value can be found in the published state on the `linkquality` property.
-It's not possible to read (`/get`) or write (`/set`) this value.
-The minimal value is `0` and the maximum value is `255`.
-The unit of this value is `lqi`.
 
